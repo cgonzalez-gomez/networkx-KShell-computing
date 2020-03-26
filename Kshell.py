@@ -1,14 +1,14 @@
 import networkx as nx
 
 def check_degree(G,deg):
-    """ Checks if at least one node of a graph has a degree below the threshold
-
-	Parameters
-	----------
+    """ Checks if at least one node of a graph has a degree below the threshold.
+    
+    Parameters
+    ----------
     G : NetworkX graph
         A graph or directed graph.
-	deg: int
-		Threshold for the nodes degree.
+    deg: int
+        Threshold for the nodes degree.
 		
     Returns
     -------
@@ -24,6 +24,7 @@ def check_degree(G,deg):
     False
     >>> check_degree(G,2)
     True
+    
     """
     low_degree=False
     for n in G.nodes():
@@ -106,9 +107,8 @@ def k_shell(Graph):
     return cores
 
 
-def draw_kshell(G,kshell,target=None,TF=None,color_target='blue', color_TF='red', color_intersection='magenta',nodesize=300,labels=True):
-    """ Draw the kshell of a directed graph or the kshell of a gene regulatory network with NetworkX draw.
-    See draw(G, pos=None, ax=None, hold=None, **kwds) for more details.
+def draw_kshell(G,kshell,target=None,TF=None,color_target='blue',color_TF='red',color_intersection='magenta',nodesize=300,labels=True):
+    """ Draw the kshell of a directed graph or the kshell of a gene regulatory network with NetworkX draw. See draw(G, pos=None, ax=None, hold=None, **kwds) for more details.
     
     Parameters
     ----------

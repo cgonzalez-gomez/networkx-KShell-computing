@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kshell module &#8212; Networkx Kshell Computing 0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="networkx-KShell-computing" href="modules.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="networkx-KShell-computing"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Networkx Kshell Computing 0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" accesskey="U">networkx-KShell-computing</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-Kshell">
+<span id="kshell-module"></span><h1>Kshell module<a class="headerlink" href="#module-Kshell" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="Kshell.check_degree">
+<code class="sig-prename descclassname">Kshell.</code><code class="sig-name descname">check_degree</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">deg</em><span class="sig-paren">)</span><a class="headerlink" href="#Kshell.check_degree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if at least one node of a graph has a degree below the threshold.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>) – A graph or directed graph.</p></li>
+<li><p><strong>deg</strong> (<em>int</em>) – Threshold for the nodes degree.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>low_degree</strong> – True if the graph has at least one node with a degree below the threshold.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">check_degree</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">check_degree</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Kshell.draw_kshell">
+<code class="sig-prename descclassname">Kshell.</code><code class="sig-name descname">draw_kshell</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">kshell</em>, <em class="sig-param">target=None</em>, <em class="sig-param">TF=None</em>, <em class="sig-param">color_target='blue'</em>, <em class="sig-param">color_TF='red'</em>, <em class="sig-param">color_intersection='magenta'</em>, <em class="sig-param">nodesize=300</em>, <em class="sig-param">labels=True</em><span class="sig-paren">)</span><a class="headerlink" href="#Kshell.draw_kshell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw the kshell of a directed graph or the kshell of a gene regulatory network with NetworkX draw. See draw(G, pos=None, ax=None, hold=None, <a href="#id1"><span class="problematic" id="id2">**</span></a>kwds) for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX Graph</em>) – A graph or directed graph.</p></li>
+<li><p><strong>k_shell</strong> (<em>list</em>) – A set of nodes in the k-core but not in the (k+1)-core.</p></li>
+<li><p><strong>target</strong> (<em>set</em><em>, </em><em>optional</em><em> (</em><em>default = None</em><em>)</em>) – A set of the target genes of the regulatory network.</p></li>
+<li><p><strong>TF</strong> (<em>set</em><em>, </em><em>optional</em><em> (</em><em>default = None</em><em>)</em>) – A set of the transcription factors of the regulatory network.</p></li>
+<li><p><strong>color_target</strong> (<em>string</em><em>, </em><em>optional</em><em> (</em><em>default = 'blue'</em><em>)</em>) – Color of the target genes.</p></li>
+<li><p><strong>color_TF</strong> (<em>string</em><em>, </em><em>optional</em><em> (</em><em>default = 'red'</em><em>)</em>) – Color of the transcription fractors.</p></li>
+<li><p><strong>color_intersection</strong> (<em>string</em><em> (</em><em>default = 'magenta'</em><em>)</em>) – Color of the genes that are both transcription factors and target genes.</p></li>
+<li><p><strong>nodesize</strong> (<em>scalar</em><em> or </em><em>array</em><em>, </em><em>optional</em><em> (</em><em>default=300</em><em>)</em>) – Size of nodes.  If an array is specified it must be the
+same length as nodelist.</p></li>
+<li><p><strong>labels</strong> (<em>boolean</em><em>,</em><em>optional</em><em> (</em><em>default=True</em><em>)</em>) – Set to True to draw labels on the nodes.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="Kshell.find_nodes">
+<code class="sig-prename descclassname">Kshell.</code><code class="sig-name descname">find_nodes</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">deg</em><span class="sig-paren">)</span><a class="headerlink" href="#Kshell.find_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the nodes with a degree below the threshold.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G</strong> (<em>NetworkX graph</em>) – A graph or directed graph.</p></li>
+<li><p><strong>deg</strong> (<em>int</em>) – Threshold for the nodes degree.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>nodes</strong> – A list of nodes with a degree below the threshold.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">[2,4]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">[1,2,3,4]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Kshell.k_shell">
+<code class="sig-prename descclassname">Kshell.</code><code class="sig-name descname">k_shell</code><span class="sig-paren">(</span><em class="sig-param">Graph</em><span class="sig-paren">)</span><a class="headerlink" href="#Kshell.k_shell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the nodes in each kshell of the graph.</p>
+<p>The k-shell is the set of nodes in the k-core but not in the (k+1)-core.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>Graph</strong> (<em>NetworkX graph</em>) – A graph or directed graph.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>cores</strong> – A list of lists of the nodes in each kshell of th graph.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k_shell</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="go">[[5], [2, 4, 1, 3]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="modules.html"
+                        title="previous chapter">networkx-KShell-computing</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Kshell.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="networkx-KShell-computing"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Networkx Kshell Computing 0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >networkx-KShell-computing</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Sarah DANDOU Catalina GONZALEZ.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>
