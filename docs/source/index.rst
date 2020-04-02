@@ -10,9 +10,9 @@ Welcome to Networkx Kshell Computing's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   intro
-   modules
-   Kshell
+   intro.rst
+   modules.rst
+   Kshell.rst
 
 
 Indices and tables
