@@ -9,6 +9,6 @@ __maintainer__ = "Catalina Gonzalez Gomez et Sarah Dandou"
 __email__ = "catalina.gonzalez-gomez@insa-lyon.fr, sarah.dandou@insa-lyon.fr"
 __status__ = "pre-alpha"
 
-
 import sys
 sys.path.append('..')
+
