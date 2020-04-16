@@ -1,5 +1,5 @@
 # Networkx-KShell-Computing
-This 3.7 python package allows you to extract differents informations from a NetworkX graph through several data driven methods.
+This 3.7 python package allows you to extract differents informations from a NetworkX graph through several data driven methods .
 ### Dependencies: 
 ```pip install networkx``` version 4.3.0
 ### Installation: 
